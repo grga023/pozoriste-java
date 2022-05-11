@@ -15,4 +15,4 @@ Mogucnosti administratora:  Dodavanje (Pozorista, Predstava, Sala i Izvodjenja p
                             Brisanje (Pozorista, Predstava, Sala, Izvodjenja predstava i Rezervacija),
                             Pregled kompletne baze podataka osim tabele u kojoj se smestaju podatci o korisnicima.
                             
-Mogucnosti korisnika:       Rezervacija karata za vec postojeca izvodjenja predstavi koje je predhodno dodao administrator.
+Mogucnosti korisnika:       Rezervacija karata za vec postojeca izvodjenja predstava koje je predhodno dodao administrator.
