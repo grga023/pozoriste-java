@@ -24,7 +24,7 @@ public class Helper {
 		String pass = "6BDKzRPrXe";
 		
 	    try {
-	        conn = DriverManager.getConnection(db,usr,pass);
+	        conn = DriverManager.getConnection(URL,usr,pass);
 	        if (conn != null) {
 	            DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
 	            System.out.println("Driver name: " + dm.getDriverName());
