@@ -19,9 +19,9 @@ public class Helper {
 		
 		Connection conn = null;
 		 
-		String db ="jdbc:mysql://localhost:3306/pozoriste";
-		String usr = "root";
-		String pass = "grga";
+		String URL ="jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11491542";
+		String usr = "sql11491542";
+		String pass = "6BDKzRPrXe";
 		
 	    try {
 	        conn = DriverManager.getConnection(db,usr,pass);
