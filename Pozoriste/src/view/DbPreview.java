@@ -63,7 +63,7 @@ public class DbPreview extends JFrame {
 			
 		HelperPrikaz.PopuniTabelu(query,tableData);
 		
-		Last = "Pozorista";
+		Last = "pozorista";
 		TableName = "pozoriste";
 	}
 	
@@ -74,7 +74,7 @@ public class DbPreview extends JFrame {
 		
 		HelperPrikaz.PopuniTabelu(query,tableData);
 		
-		Last = "Sale";
+		Last = "sale";
 		TableName = "sala";
 	}
 
@@ -85,7 +85,7 @@ public class DbPreview extends JFrame {
 		
 		HelperPrikaz.PopuniTabelu(query, tableData);
 		
-		Last = "Predstave";
+		Last = "predstave";
 		TableName = "predstave";
 	}
 
@@ -96,7 +96,7 @@ public class DbPreview extends JFrame {
 		
 		HelperPrikaz.PopuniTabelu(query, tableData);
 		
-		Last = "Izvodjenje";
+		Last = "izvodjenje";
 		TableName = "izvodjenje_predstave";
 	}
 	
@@ -104,15 +104,14 @@ public class DbPreview extends JFrame {
 	public void PregledRezervacija() {
 
 		String query = "SELECT CONCAT_WS('',r.ID) as 'ID rezervacije', CONCAT_WS(' ',k.Ime, k.Prezime) as 'Ime i prezime',  CONCAT_WS('',p.Naziv) as 'Naziv predstave' "
-				+ "FROM Rezervacije r,Korisnik k,  predstave p, izvodjenje_predstave i"
+				+ "FROM rezervacije r,korisnik k,  predstave p, izvodjenje_predstave i"
 				+ " WHERE r.ID_K=k.ID AND r.ID_I = i.ID AND i.ID_P = p.ID "
-				+ "ORDER BY r.ID"
-				+ "ORDER BY r.ID ASC";
+				+ "ORDER BY r.ID";
 		
 		HelperPrikaz.PopuniTabelu(query, tableData);
 		
-		Last = "Rezervacija";
-		TableName = "Rezervacije";
+		Last = "rezervacija";
+		TableName = "rezervacije";
 	}
 	
 	
@@ -184,19 +183,19 @@ public class DbPreview extends JFrame {
 		JButton btnNewButton_1 = new JButton("Refresh");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(Last == "Pozorista") {
+				if(Last == "pozorista") {
 					PregledPozorista();
 				}
-				else if(Last == "Sale") {
+				else if(Last == "sale") {
 					PregledSala();
 				}
-				else if(Last == "Predstave") {
+				else if(Last == "predstave") {
 					PregledPredstava();
 				}
-				else if(Last == "Izvodjenje") {
+				else if(Last == "izvodjenje") {
 					PregledIzvodjenja();
 				}
-				else if(Last == "Rezervacija") {
+				else if(Last == "rezervacija") {
 					PregledRezervacija();
 				}	        										
 			}
@@ -208,27 +207,25 @@ public class DbPreview extends JFrame {
 		JButton btnNewButton_1_1 = new JButton("Delete");
 		btnNewButton_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				try {
-					Connection connect=DriverManager.getConnection("jdbc:mysql://localhost:3306/pozoriste","root","grga");
 					String query = "DELETE FROM "+TableName+" WHERE id = "+idForDelete+"";
-					
+					Connection connect = Helper.DBSetup();
+				try {					
 					Statement st = connect.createStatement();
 					st.execute(query);
 											
-					if(Last == "Pozorista") {
+					if(Last == "pozorista") {
 						PregledPozorista();
 					}
-					else if(Last == "Sale") {
+					else if(Last == "sale") {
 						PregledSala();
 					}
-					else if(Last == "Predstave") {
+					else if(Last == "predstave") {
 						PregledPredstava();
 					}
-					else if(Last == "Izvodjenje") {
+					else if(Last == "izvodjenje") {
 						PregledIzvodjenja();
 					}
-					else if(Last == "Rezervacija") {
+					else if(Last == "rezervacija") {
 						PregledRezervacija();
 					}
 																							
