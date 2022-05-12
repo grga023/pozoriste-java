@@ -161,10 +161,10 @@ public class KorisnikPregled extends JFrame {
 					}
 					
 					if(BrK==1) {
-						JOptionPane.showMessageDialog(null,String.valueOf("Uspesno sete rezervisali kartu."));
+						JOptionPane.showMessageDialog(null,String.valueOf("Uspesno ste rezervisali kartu."));
 					}
 					else {
-						JOptionPane.showMessageDialog(null,String.valueOf("Uspesno sete rezervisali karte."));
+						JOptionPane.showMessageDialog(null,String.valueOf("Uspesno ste rezervisali karte."));
 					}
 					
 				} catch (SQLException e1) {
